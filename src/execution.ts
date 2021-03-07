@@ -1,4 +1,3 @@
-import genFn from "generate-function";
 import {
   ASTNode,
   DocumentNode,
@@ -48,6 +47,7 @@ import {
   resolveFieldDef,
 } from "./ast";
 import { GraphQLError as GraphqlJitError } from "./error";
+import genFn from "./generate-function";
 import createInspect from "./inspect";
 import { createNullTrimmer, NullTrimmer } from "./non-null";
 import {

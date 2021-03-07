@@ -7,8 +7,9 @@ This is a fork of [zalando-incubator/graphql-jit](https://github.com/zalando-inc
 
 - Support for GraphQL Subscription
 - Custom JSON Stringify factory function
+- Minimal dependencies for lightweight bundle
 
-Check out the [original README](https://github.com/zalando-incubator/graphql-jit/blob/master/README.md) to learn more.
+If you do not have the above use cases, it is better to stick with the [original repo](https://github.com/zalando-incubator/graphql-jit). Check out the [their README](https://github.com/zalando-incubator/graphql-jit/blob/master/README.md) to learn more about `graphql-jit`.
 
 ## Install
 

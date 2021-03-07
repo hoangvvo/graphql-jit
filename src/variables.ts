@@ -1,4 +1,3 @@
-import genFn from "generate-function";
 import {
   GraphQLBoolean,
   GraphQLError,
@@ -21,6 +20,7 @@ import {
 } from "graphql";
 import { addPath, computeLocations, ObjectPath } from "./ast";
 import { GraphQLError as GraphQLJITError } from "./error";
+import genFn from "./generate-function";
 import createInspect from "./inspect";
 
 const inspect = createInspect();

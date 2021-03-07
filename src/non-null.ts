@@ -9,8 +9,9 @@ import {
   isObjectType,
 } from "graphql";
 import { isAbstractType } from "graphql/type";
-import merge from "lodash.merge";
 import { collectFields, collectSubfields, resolveFieldDef } from "./ast";
+// @ts-ignore
+import merge from "./deepmerge5";
 import { CompilationContext } from "./execution";
 
 interface QueryMetadata {

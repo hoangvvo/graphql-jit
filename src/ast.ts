@@ -1,4 +1,3 @@
-import genFn from "generate-function";
 import {
   ArgumentNode,
   ASTNode,
@@ -32,6 +31,7 @@ import { getFieldDef } from "graphql/execution/execute";
 import { Kind, SelectionNode, TypeNode } from "graphql/language";
 import { isAbstractType } from "graphql/type";
 import { CompilationContext, GLOBAL_VARIABLES_NAME } from "./execution";
+import genFn from "./generate-function";
 import createInspect from "./inspect";
 import { Maybe } from "./types";
 

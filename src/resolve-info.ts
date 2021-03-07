@@ -1,4 +1,3 @@
-import genFn from "generate-function";
 import {
   doTypesOverlap,
   FieldNode,
@@ -18,7 +17,9 @@ import {
   SelectionSetNode,
 } from "graphql";
 import memoize from "lodash.memoize";
-import mergeWith from "lodash.mergewith";
+// @ts-ignore
+import merge from "./deepmerge5";
+import genFn from "./generate-function";
 import { memoize2, memoize4 } from "./memoize";
 
 // TODO(boopathi): Use negated types to express
@@ -329,20 +330,8 @@ function hasField(typ: GraphQLObjectLike, fieldName: string) {
 // This is because lodash does not support merging keys
 // which are symbols. We require them for leaf fields
 function deepMerge<TObject, TSource>(obj: TObject, src: TSource) {
-  mergeWith(obj, src, (objValue, srcValue) => {
-    if (isLeafField(objValue)) {
-      if (isLeafField(srcValue)) {
-        return {
-          ...objValue,
-          ...srcValue,
-        };
-      }
-
-      return objValue;
-    } else if (isLeafField(srcValue)) {
-      return srcValue;
-    }
-
-    return;
+  return merge(obj, src, {
+    isMergeableObject: isLeafField,
+    clone: false,
   });
 }
