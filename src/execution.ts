@@ -279,12 +279,13 @@ export function compileQuery(
           : undefined
       );
     }
-
+    /* istanbul ignore start */
     if ((options as any).debug) {
       // result of the compilation useful for debugging issues
       // and visualization tools like try-jit.
       compiledQuery.__DO_NOT_USE_THIS_OR_YOU_WILL_BE_FIRED_compilation = functionBody;
     }
+    /* istanbul ignore stop */
     return compiledQuery;
   } catch (err) {
     return {
